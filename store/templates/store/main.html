@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 {% load static %}
+<link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
 <html>
 <head>
     <title>Ecom</title>
@@ -8,6 +9,28 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <script type="text/javascript">
+      var user = '{{request.user}}'
+      
+      function getToken(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+      }
+      var csrftoken = getToken('csrftoken')
+
+
+
+    </script>
 
 </head>
 <body>
