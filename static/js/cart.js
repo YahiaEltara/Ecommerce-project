@@ -32,9 +32,9 @@ function updateUserOrder(productId, action){
 		   return response.json();
 		})
 		.then((data) => {
-		    // location.reload()
-            console.log('Data received:', data);
-            document.getElementById('cart-total').textContent = data.cartTotal;
+            console.log('data:', data);
+            location.reload()
+            // document.getElementById('cart-total').textContent = data.cartTotal;
 
 
 		});
